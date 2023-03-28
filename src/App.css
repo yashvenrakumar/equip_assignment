@@ -36,3 +36,147 @@
     transform: rotate(360deg);
   }
 }
+
+.navigation {
+  margin: 4%;
+}
+.LoginAuth {
+  width: 100%;
+  display: flex;
+  background-image: linear-gradient(to right, #f7efef, white);
+}
+.logininput {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 30%;
+  top: 100px;
+  background-image: linear-gradient(to right, #f7efef, white);
+  /* background: #f7efef; */
+  border-radius: 20px;
+}
+
+.test-sign {
+  text-align: center;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 30px;
+  color: #ef4406;
+
+  margin-top: 10px;
+}
+
+.authsingnin {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #360049;
+  margin: 0px;
+  padding-left: 50px;
+}
+
+.inputText {
+  width: 80%;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 10%;
+}
+
+.btnslmain {
+  display: flex;
+  margin-left: 7%;
+  margin-top: 20px;
+}
+
+.btnsl {
+  width: 41%;
+  margin-left: 3%;
+  border-radius: 10px;
+  background-color: rgb(234, 229, 229);
+}
+
+.authsingnin-btn-sign {
+  text-align: center;
+  width: 200px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ef4406;
+}
+
+.authsingnin-btn-login {
+  text-align: center;
+  width: 200px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #4d0cd9;
+}
+
+.logininputforotp {
+  position: absolute;
+  width: 600px;
+  height: 300px;
+  left: 33%;
+  top: 33%;
+  background-image: linear-gradient(to right, #f7efef, white);
+  /* background: #f7efef; */
+  border-radius: 20px;
+}
+
+.authsingnin-btn-login {
+  text-align: center;
+  width: 200px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #4d0cd9;
+}
+.authsingninotp {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #360049;
+  margin: 3%;
+  padding-left: 50px;
+}
+
+.authsingnin-btn-sign {
+  text-align: center;
+  width: 200px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #ef4406;
+}
+
+.authsingnin-btn-login {
+  text-align: center;
+  width: 200px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  color: #4d0cd9;
+}
+
+.modelmarginleft {
+  padding-top: 4%;
+  padding-left: 8%;
+}
