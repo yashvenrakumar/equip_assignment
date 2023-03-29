@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import S3 from "react-aws-s3";
 // import bcrypt from "bcrypt";
+
 import { saveAs } from "file-saver";
 import bcrypt from "bcryptjs";
 import AWS from "aws-sdk";
 import dataJson from ".././data/8887694282.json";
-
+import crypto from "crypto";
+const secret = "uM7xhzSNL8REAnJ88oEY4LkE2MBpdR4r";
 AWS.config.update({
   region: "ap-south-1",
   accessKeyId: "AKIA3KZVK3RM64X6YWWI",
@@ -42,13 +44,17 @@ function Register() {
       userSignUp();
     }
   };
-  // const hashedPassword = hashPassword(password);
+
   const userSignUp = async () => {
+    // const hash = encrypt(password);
+    // console.log("hash", hash);
+    const hashedPassword = await hashPassword(password);
+
     const data = {
       firstName: firstName,
       lastName: lastName,
       phoneNumber: phoneNumber,
-      password: password,
+      password: hashedPassword,
       url: url,
     };
     const jsonData = JSON.stringify(data);
@@ -101,12 +107,31 @@ function Register() {
     event.preventDefault();
   };
 
-  // const saltRounds = 10; // the number of salt rounds to use
-  // function hashPassword(password) {
-  //   const salt = bcrypt.genSaltSync(saltRounds);
-  //   const hash = bcrypt.hashSync(password, salt);
-  //   return hash;
-  // }
+  const saltRounds = 10; // the number of salt rounds to use
+  function hashPassword(password) {
+    const salt = bcrypt.genSaltSync(saltRounds);
+    const hash = bcrypt.hashSync(password, salt);
+    return hash;
+  }
+
+  // const encrypt = (password) => {
+  //   const iv = Buffer.from(crypto.randomBytes(16));
+  //   const cipher = crypto.createCipheriv(
+  //     "aes-256-ctr",
+  //     Buffer.from(secret),
+  //     iv
+  //   );
+
+  //   const encryptedPassword = Buffer.concat([
+  //     cipher.update(password),
+  //     cipher.final(),
+  //   ]);
+
+  //   return {
+  //     iv: iv.toString("hex"),
+  //     password: encryptedPassword.toString("hex"),
+  //   };
+  // };
   return (
     <>
       <div className="LoginAuth">
@@ -178,7 +203,12 @@ function Register() {
                 <dev></dev>
                 {/* <h1 className="authsingnin">Already SignIn? Please LogIn</h1> */}
 
-                <button className="btnsl" onClick={() => {}}>
+                <button
+                  className="btnsl"
+                  onClick={() => {
+                    navigate("/login");
+                  }}
+                >
                   <h1 className="authsingnin-btn-login">LOGIN </h1>
                 </button>
               </div>

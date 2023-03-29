@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import dataJson from ".././data/8887694282.json";
+import bcrypt from "bcryptjs";
 const jsonfile = require("jsonfile");
 // import bcrypt from "bcrypt";
 function Login() {
@@ -26,14 +27,15 @@ function Login() {
        .. also perform the condition of  encruption and compare the hash of password for security but 
        recently is not workin in my laptop 
      */
-    if (
-      phoneNumberLogin === dataJson.phoneNumber &&
-      password === dataJson.password
-    ) {
+
+    const valuu = await bcrypt.compareSync(password, dataJson.password);
+    console.log("hashedPassword phoneNumberLogin", valuu, phoneNumberLogin);
+    if (phoneNumberLogin === dataJson.phoneNumber && valuu) {
       alert("sucessfullly login ....");
       navigate("/update");
     }
   };
+
   return (
     <div>
       <>

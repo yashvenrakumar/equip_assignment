@@ -1,1 +1,7 @@
-{"firstName":"yashvendra","lastName":"kumar","phoneNumber":"8887694282","password":"yashvendra123","url":"www.abs/ada.png"}
+{
+  "firstName": "yashvendra",
+  "lastName": "kumar",
+  "phoneNumber": "8887694282",
+  "password": "$2a$10$PRokL.D36grW4NEHFCS1jOiiTdtraTRCj5TqP4yZMpXnA4PNSEtwu",
+  "url": "www.abs/ada.png"
+}
