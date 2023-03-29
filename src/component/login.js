@@ -15,6 +15,10 @@ function Login() {
     if (regNumber.test(phoneNumberLogin) === false)
       return alert("Please enter valid phone number");
     if (password == "") return alert("Please enter password");
+
+    if (dataJson.phoneNumber === phoneNumberLogin) {
+      return alert("you are already register login ");
+    }
     LogInValidation();
   };
   const LogInValidation = async () => {
@@ -33,6 +37,9 @@ function Login() {
     if (phoneNumberLogin === dataJson.phoneNumber && valuu) {
       alert("sucessfullly login ....");
       navigate("/update");
+    } else {
+      alert("you are not register");
+      navigate("/registration");
     }
   };
 
