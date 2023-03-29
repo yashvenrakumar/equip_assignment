@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import S3 from "react-aws-s3";
 // import bcrypt from "bcrypt";
 import { saveAs } from "file-saver";
 import bcrypt from "bcryptjs";
@@ -66,6 +67,7 @@ function Register() {
   };
 
   const uploadImageToS3 = async (e) => {
+    console.log("test", e);
     try {
       const configSettings = {
         bucketName: "equip9-testing",
@@ -78,9 +80,10 @@ function Register() {
       var tempUri = [];
 
       var fileName = `${Date.now()}-${e.name}` + ".jpeg";
-      var S3Client = new AWS.S3(configSettings);
+      var S3Client = new S3(configSettings);
       await S3Client.uploadFile(e, fileName)
         .then((data) => {
+          console.log("data", data);
           tempUri.push(data.location);
         })
         .catch((err) => {
